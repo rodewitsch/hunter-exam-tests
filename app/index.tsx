@@ -16,7 +16,7 @@ export default function App() {
           <Image style={styles.navigationItemIcon} source={require('../assets/images/exam.png')} />
           <Text style={styles.navigationItemTitle}>Экзамен</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navigationItem} onPress={() => router.navigate('/test')}>
+        <TouchableOpacity style={styles.navigationItem} onPress={() => router.navigate('/training/topics')}>
           <Image style={styles.navigationItemIcon} source={require('../assets/images/test.png')} />
           <Text style={styles.navigationItemTitle}>Тренировка</Text>
         </TouchableOpacity>
