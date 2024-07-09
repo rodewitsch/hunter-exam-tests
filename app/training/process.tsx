@@ -2,15 +2,25 @@ import 'react-native-reanimated';
 import { StyleSheet, View, StatusBar, TouchableOpacity, Image, Text, ScrollView } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import topics from '../../assets/questions/topics.js';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
+interface TestState {
+  examStatus: string;
+  questionNumber: number;
+  progress: { status: number; answers: number[] }[];
+}
 
 export default function TrainingScreen() {
   const { topic } = useLocalSearchParams<{ topic: string }>();
-  const topicData = topics[topic - 1];
+  const topicQuestions = topics[topic - 1];
 
-  const initialTestState = {
+  /**
+   * Represents the initial state of the test.
+   */
+  const initialTestState: TestState = {
     examStatus: 'inProgress',
     questionNumber: 0,
+    progress: new Array(45).fill(0).map((_, index) => ({ status: 0, answers: [] })),
   };
 
   const [testState, setExamState] = useState(initialTestState);
@@ -18,6 +28,20 @@ export default function TrainingScreen() {
   function setQuestion(number: number) {
     if (number > 44 || number < 0) return;
     setExamState({ ...testState, questionNumber: number });
+  }
+
+  function setAnswer(question: number, answer: number) {
+    const newProgress = testState.progress.map((item, index) => {
+      if (index === question) {
+        if (item.answers.includes(answer)) {
+          return { ...item, status: 0, answers: item.answers.filter((a) => a !== answer) };
+        } else {
+          return { ...item, status: 0, answers: [...item.answers, answer] };
+        }
+      }
+      return item;
+    });
+    setExamState({ ...testState, progress: newProgress });
   }
 
   return (
@@ -43,6 +67,24 @@ export default function TrainingScreen() {
           </TouchableOpacity>
         ))}
       </ScrollView>
+
+      <View style={styles.questionArea}>
+        <View style={styles.questionTextArea}>
+          <Text style={styles.questionText}>{topicQuestions[testState.questionNumber].questionText}</Text>
+        </View>
+
+        <ScrollView style={styles.questionAnswers}>
+          {topicQuestions[testState.questionNumber].answers.map((answer, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => setAnswer(testState.questionNumber + 1, index)}
+              style={{...styles.questionAnswer, backgroundColor: testState.progress[testState.questionNumber+1].answers.includes(index) ? 'red' : '#f8f8f8'}}
+            >
+              <Text style={styles.questionAnswerText}>{answer}</Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -79,4 +121,30 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   questionsNavigationItemTitle: {},
+  questionArea: {
+    marginTop: 10,
+  },
+  questionTextArea: {
+    paddingHorizontal: 10,
+    backgroundColor: '#f8f8f8',
+    padding: 20,
+  },
+  questionText: {
+    fontSize: 18,
+    textAlign: 'justify',
+  },
+  questionImage: {},
+  questionAnswers: {
+    marginTop: 10,
+    paddingHorizontal: 10,
+  },
+  questionAnswer: {
+    padding: 10,
+    backgroundColor: '#f8f8f8',
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+  questionAnswerText: {
+    fontSize: 16,
+  },
 });
