@@ -1,7 +1,7 @@
 [
   {
     "questionText": "Укажите правильную расстановку таксономических единиц классификации животного мира:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1
     ],
@@ -14,7 +14,7 @@
   },
   {
     "questionText": "К какому типу животных относятся охотничьи животные?",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1
     ],
@@ -28,7 +28,7 @@
   },
   {
     "questionText": "К каким классам животных относятся охотничьи животные?",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       4,
       5
@@ -44,7 +44,7 @@
   },
   {
     "questionText": "К отряду парнокопытных класса млекопитающих относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -63,7 +63,7 @@
   },
   {
     "questionText": "К отряду хищных класса млекопитающих относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       4,
@@ -81,7 +81,7 @@
   },
   {
     "questionText": "К отряду грызунов класса млекопитающих относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       4,
@@ -99,7 +99,7 @@
   },
   {
     "questionText": "К отряду зайцеобразных класса млекопитающих относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1
     ],
@@ -115,7 +115,7 @@
   },
   {
     "questionText": "К семейству оленьих отряда парнокопытных относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       3,
@@ -133,7 +133,7 @@
   },
   {
     "questionText": "К семейству полорогих отряда парнокопытных относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       6
@@ -150,7 +150,7 @@
   },
   {
     "questionText": "К семейству собачьих отряда хищных относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       4,
@@ -168,7 +168,7 @@
   },
   {
     "questionText": "К семейству куньих отряда хищных относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       4,
@@ -187,7 +187,7 @@
   },
   {
     "questionText": "К отряду курообразных класса птиц относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -206,7 +206,7 @@
   },
   {
     "questionText": "К отряду гусеобразных класса птиц относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -225,7 +225,7 @@
   },
   {
     "questionText": "К отряду гусеобразных класса птиц относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       2,
@@ -243,7 +243,7 @@
   },
   {
     "questionText": "К отряду ржанкообразных класса птиц относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       2,
@@ -262,7 +262,7 @@
   },
   {
     "questionText": "Охотничьими животными являются:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2
     ],
@@ -276,7 +276,7 @@
   },
   {
     "questionText": "К пушным животным по охотничьей квалификации относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       2,
@@ -295,7 +295,7 @@
   },
   {
     "questionText": "К боровой дичи по охотничьей квалификации относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -313,7 +313,7 @@
   },
   {
     "questionText": "К полевой дичи по охотничьей квалификации относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       3,
@@ -331,7 +331,7 @@
   },
   {
     "questionText": "К водоплавающей и болотной дичи по охотничьей квалификации относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       2,
@@ -351,7 +351,7 @@
   },
   {
     "questionText": "К врановым птицам по охотничьей квалификации относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       5
@@ -368,7 +368,7 @@
   },
   {
     "questionText": "К нормируемым видам охотничьих животных относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       2,
@@ -389,7 +389,7 @@
   },
   {
     "questionText": "К нормируемым видам охотничьих животных относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       2,
@@ -409,7 +409,7 @@
   },
   {
     "questionText": "Понятие интродукция (акклиматизация) диких животных означает:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -426,7 +426,7 @@
   },
   {
     "questionText": "Понятие реинтродукция (реакклиматизация) диких животных означает:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2
     ],
@@ -440,7 +440,7 @@
   },
   {
     "questionText": "На территории Беларуси интродуцированы (акклиматизированы):",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1
     ],
@@ -456,7 +456,7 @@
   },
   {
     "questionText": "На территории Беларуси реинтродуцированы (реакклиматизированы):",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -475,7 +475,7 @@
   },
   {
     "questionText": "Конвенцией СИТЕС является:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1
     ],
@@ -487,7 +487,7 @@
   },
   {
     "questionText": "К видам охотничьих животных, включенным в список конвенции СИТЕС, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       4
@@ -504,7 +504,7 @@
   },
   {
     "questionText": "Красная книга Республики Беларусь это:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1
     ],
@@ -517,7 +517,7 @@
   },
   {
     "questionText": "Кто принимает решение о включении в Красную книгу РБ редких и находящихся под угрозой исчезновения видов диких животных и дикорастущих растений и их исключении из нее?",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2
     ],
@@ -531,7 +531,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       5
@@ -548,7 +548,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       6
@@ -565,7 +565,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       2,
@@ -584,7 +584,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       4,
@@ -602,7 +602,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -620,7 +620,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       3,
       6
@@ -637,7 +637,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       5
@@ -654,7 +654,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -673,7 +673,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1,
       3,
@@ -691,7 +691,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       6
@@ -708,7 +708,7 @@
   },
   {
     "questionText": "К видам диких животных, включенным в Красную книгу РБ, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       5,
@@ -726,7 +726,7 @@
   },
   {
     "questionText": "Моногамными являются животные:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       1
     ],
@@ -738,7 +738,7 @@
   },
   {
     "questionText": "К видам охотничьих животных, являющихся моногамными, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       2,
       3
@@ -754,7 +754,7 @@
   },
   {
     "questionText": "К видам охотничьих животных, являющихся моногамными, относятся:",
-    "questionImage": "",
+    "questionImages": [],
     "rightAnswers": [
       3,
       4

@@ -19,14 +19,14 @@ export default function TrainingScreen() {
    */
   const initialTestState: TestState = {
     examStatus: 'inProgress',
-    questionNumber: 0,
-    progress: new Array(45).fill(0).map((_, index) => ({ status: 0, answers: [] })),
+    questionNumber: topicQuestions.length - 1,
+    progress: new Array(topicQuestions.length).fill(0).map((_, index) => ({ status: 0, answers: [] })),
   };
 
   const [testState, setExamState] = useState(initialTestState);
 
   function setQuestion(number: number) {
-    if (number > 44 || number < 0) return;
+    if (number > topicQuestions.length - 1 || number < 0) return;
     setExamState({ ...testState, questionNumber: number });
   }
 
@@ -53,7 +53,7 @@ export default function TrainingScreen() {
       </TouchableOpacity>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.questionsNavigation}>
-        {new Array(45).fill(0).map((_, index) => (
+        {new Array(topicQuestions.length).fill(0).map((_, index) => (
           <TouchableOpacity
             key={index + 1}
             style={{
@@ -77,8 +77,13 @@ export default function TrainingScreen() {
           {topicQuestions[testState.questionNumber].answers.map((answer, index) => (
             <TouchableOpacity
               key={index}
-              onPress={() => setAnswer(testState.questionNumber + 1, index)}
-              style={{...styles.questionAnswer, backgroundColor: testState.progress[testState.questionNumber+1].answers.includes(index) ? 'red' : '#f8f8f8'}}
+              onPress={() => setAnswer(testState.questionNumber, index)}
+              style={{
+                ...styles.questionAnswer,
+                backgroundColor: testState.progress[testState.questionNumber].answers.includes(index)
+                  ? 'red'
+                  : '#f8f8f8',
+              }}
             >
               <Text style={styles.questionAnswerText}>{answer}</Text>
             </TouchableOpacity>
