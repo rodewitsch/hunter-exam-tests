@@ -1,5 +1,5 @@
 import 'react-native-reanimated';
-import { StyleSheet, View, StatusBar, TouchableOpacity, Image, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Modal, TouchableOpacity, Image, Text, ScrollView, Pressable } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import topics from '../../assets/questions/topics.js';
 import React, { useState } from 'react';
@@ -24,6 +24,7 @@ export default function TrainingScreen() {
   };
 
   const [testState, setExamState] = useState(initialTestState);
+  const [modalVisible, setModalVisible] = useState(null);
 
   function setQuestion(number: number) {
     if (number > topicQuestions.length - 1 || number < 0) return;
@@ -46,7 +47,7 @@ export default function TrainingScreen() {
 
   return (
     <View>
-      <StatusBar hidden backgroundColor="#e8e8e8" />
+      {/* <StatusBar hidden backgroundColor="#e8e8e8" /> */}
       <TouchableOpacity style={styles.navbar} onPress={() => router.navigate('/training/topics')}>
         <Image style={styles.navbarIcon} source={require('../../assets/images/back.png')} />
         <Text style={styles.navbarTitle}>Тренировка</Text>
@@ -71,6 +72,27 @@ export default function TrainingScreen() {
       <View style={styles.questionArea}>
         <View style={styles.questionTextArea}>
           <Text style={styles.questionText}>{topicQuestions[testState.questionNumber].questionText}</Text>
+        </View>
+
+        <Modal transparent={true} animationType="fade" visible={modalVisible !== null} onRequestClose={() => setModalVisible(null)}>
+          <Pressable
+            onPress={() => setModalVisible(null)}
+            style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(232, 232, 232, 0.8)'}}
+          >
+            <Image
+              resizeMode="contain"
+              style={{ width: '100%', height: '100%' }}
+              source={{ uri: topicQuestions[testState.questionNumber].questionImages[modalVisible] }}
+            />
+          </Pressable>
+        </Modal>
+
+        <View style={styles.questionImagesArea}>
+          {topicQuestions[testState.questionNumber].questionImages.map((image, index) => (
+            <Pressable onPress={() => setModalVisible(index)}>
+              <Image resizeMode="contain" style={styles.questionImage} key={index} source={{ uri: image }} />
+            </Pressable>
+          ))}
         </View>
 
         <ScrollView style={styles.questionAnswers}>
@@ -138,7 +160,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'justify',
   },
-  questionImage: {},
+  questionImagesArea: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  questionImage: {
+    width: 100,
+    height: 100,
+    margin: 10,
+    borderRadius: 10,
+  },
   questionAnswers: {
     marginTop: 10,
     paddingHorizontal: 10,

@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 export default function TrainingTopicsScreen() {
   return (
     <View>
-      <StatusBar hidden backgroundColor="#e8e8e8" />
+      {/* <StatusBar hidden backgroundColor="#e8e8e8" /> */}
       <TouchableOpacity style={styles.navbar} onPress={() => router.navigate('/')}>
         <Image style={styles.navbarIcon} source={require('../../assets/images/back.png')} />
         <Text style={styles.navbarTitle}>Тренировка</Text>

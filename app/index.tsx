@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 export default function App() {
   return (
     <View>
-      <StatusBar hidden backgroundColor="#e8e8e8" />
+      {/* <StatusBar hidden backgroundColor="#e8e8e8" /> */}
       <View style={styles.header}>
         <Image style={styles.headerLogo} source={require('../assets/images/react-logo.png')} />
         <Text style={styles.headerTitle}>Тесты охотничьего экзамена</Text>
