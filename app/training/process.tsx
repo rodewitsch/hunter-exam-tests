@@ -24,7 +24,8 @@ export default function TrainingScreen() {
   };
 
   const [testState, setExamState] = useState(initialTestState);
-  const [modalVisible, setModalVisible] = useState(null);
+  const [imageModalVisible, setImageModalVisible] = useState(null);
+  const [explanationModalVisible, setExplanationModalVisible] = useState(false);
 
   function setQuestion(number: number) {
     if (number > topicQuestions.length - 1 || number < 0) return;
@@ -47,11 +48,20 @@ export default function TrainingScreen() {
 
   return (
     <View>
-      {/* <StatusBar hidden backgroundColor="#e8e8e8" /> */}
-      <TouchableOpacity style={styles.navbar} onPress={() => router.navigate('/training/topics')}>
-        <Image style={styles.navbarIcon} source={require('../../assets/images/back.png')} />
-        <Text style={styles.navbarTitle}>Тренировка</Text>
-      </TouchableOpacity>
+      <View style={styles.navbar}>
+        <TouchableOpacity
+          style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginRight: '45%' }}
+          onPress={() => router.navigate('/training/topics')}
+        >
+          <Image style={styles.navbarIcon} source={require('../../assets/images/back.png')} />
+          <Text style={styles.navbarTitle}>Тренировка</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setExplanationModalVisible(true)}>
+          {topicQuestions[testState.questionNumber].explanation ? (
+            <Text style={styles.answerExplanationButton}>?</Text>
+          ) : null}
+        </TouchableOpacity>
+      </View>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.questionsNavigation}>
         {new Array(topicQuestions.length).fill(0).map((_, index) => (
@@ -74,22 +84,56 @@ export default function TrainingScreen() {
           <Text style={styles.questionText}>{topicQuestions[testState.questionNumber].questionText}</Text>
         </View>
 
-        <Modal transparent={true} animationType="fade" visible={modalVisible !== null} onRequestClose={() => setModalVisible(null)}>
+        <Modal
+          transparent={true}
+          animationType="fade"
+          visible={explanationModalVisible}
+          onRequestClose={() => setExplanationModalVisible(false)}
+        >
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'rgba(232, 232, 232, 0.96)',
+              height: 40,
+            }}
+          >
+            <ScrollView>
+              <Text style={{ padding: 20, fontSize: 16, textAlign: 'justify' }}>{topicQuestions[testState.questionNumber].explanation}</Text>
+            </ScrollView>
+            <Pressable style={styles.explanationModalCloseButton} onPress={() => setExplanationModalVisible(false)}>
+              <Text style={styles.explanationModalCloseButtonText}>X</Text>
+            </Pressable>
+          </View>
+        </Modal>
+
+        <Modal
+          transparent={true}
+          animationType="fade"
+          visible={imageModalVisible !== null}
+          onRequestClose={() => setImageModalVisible(null)}
+        >
           <Pressable
-            onPress={() => setModalVisible(null)}
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(232, 232, 232, 0.8)'}}
+            onPress={() => setImageModalVisible(null)}
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'rgba(232, 232, 232, 0.8)',
+            }}
           >
             <Image
               resizeMode="contain"
               style={{ width: '100%', height: '100%' }}
-              source={{ uri: topicQuestions[testState.questionNumber].questionImages[modalVisible] }}
+              source={{ uri: topicQuestions[testState.questionNumber].questionImages[imageModalVisible] }}
             />
           </Pressable>
         </Modal>
 
         <View style={styles.questionImagesArea}>
           {topicQuestions[testState.questionNumber].questionImages.map((image, index) => (
-            <Pressable onPress={() => setModalVisible(index)}>
+            <Pressable onPress={() => setImageModalVisible(index)}>
               <Image resizeMode="contain" style={styles.questionImage} key={index} source={{ uri: image }} />
             </Pressable>
           ))}
@@ -135,6 +179,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#333',
   },
+  answerExplanationButton: {
+    fontSize: 20,
+    width: 30,
+    height: 30,
+    textAlign: 'center',
+    borderWidth: 1,
+    borderRadius: 20,
+  },
   questionsNavigation: {
     paddingTop: 10,
   },
@@ -147,9 +199,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 10,
   },
+  explanationModalCloseButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: '#f8f8f8',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10,
+    marginBottom: 20,
+  },
+  explanationModalCloseButtonText: {
+    fontSize: 25,
+  },
   questionsNavigationItemTitle: {},
   questionArea: {
     marginTop: 10,
+    height: '85%'
   },
   questionTextArea: {
     paddingHorizontal: 10,
