@@ -19,6 +19,10 @@ export default function App() {
         <TouchableOpacity style={styles.navigationItem} onPress={() => router.navigate('/training/topics')}>
           <Image style={styles.navigationItemIcon} source={require('../assets/images/test.png')} />
           <Text style={styles.navigationItemTitle}>Тренировка</Text>
+        </TouchableOpacity>        
+        <TouchableOpacity style={styles.navigationItem} onPress={() => router.navigate('/documents')}>
+          <Image style={styles.navigationItemIcon} source={require('../assets/images/document.png')} />
+          <Text style={styles.navigationItemTitle}>Документы</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navigationItem} onPress={() => router.navigate('/settings')}>
           <Image style={styles.navigationItemIcon} source={require('../assets/images/settings.png')} />
